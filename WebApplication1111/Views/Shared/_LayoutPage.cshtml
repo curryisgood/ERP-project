@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <form>
+            <a href="~/Product">품목</a>
+            <a href="~/Purchase">구매</a>
+            <a href="~/Sale">판매</a>
+            <a href="~/Account">거래처</a>
+        </form>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

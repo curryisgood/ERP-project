@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<h1>품목 등록</h1>
+<form method="post" id="prodInput">
+    품목명 : <input type="text" id="prodName"><br />
+    <input type="radio" name="prodCategory" value="rawMaterial" checked />원재료
+    <input type="radio" name="prodCategory" value="product" /> 제품
+    <input type="radio" name="prodCategory" value="goods" /> 상품
+    <br />
+    안전재고 수량 : <input type="number" id="prodSafeCnt">
+    <input type="submit" id="prodInputBtn">
+</form>
+
+<a href="~/Product/prodLst">품목 조회</a>
+<script type="module" src="~/Scripts/productInput.js"></script>
+
+

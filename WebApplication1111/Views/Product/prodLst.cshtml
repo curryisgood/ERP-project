@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<h1>품목 리스트</h1>
+<ul id="productContainer">
+    @foreach (var item in ViewBag.prodList)
+    {
+        <li>
+            <button type="button" data-btn="edit">수정</button>
+            <button type="button" data-btn="delete">삭제</button>
+            <p>코드: <span id="code">@item.Code</span></p>
+            <p>이름: <span id="name">@item.Name</span></p>
+            <p>분류: <span id="category">@item.Type</span></p>
+            <p>안전재고: <span id="safetyStock">@item.CntStock</span></p>
+
+            <form id="editForm" hidden>
+                품목명 <input type="text" id="productName" />
+                <select id="productType">
+                    <option value="rawMaterial">원재료</option>
+                    <option value="product">제품</option>
+                    <option value="goods">상품</option>
+                </select>
+                안전재고수량 <input type="number"min=0 id="productSaftyStock" />
+                <button type="submit">등록</button>
+            </form>
+        </li>
+    }
+</ul>
+<a href="~/Product/">품목 등록</a>
+<script type="module" src="~/Scripts/productGet.js"></script>
+

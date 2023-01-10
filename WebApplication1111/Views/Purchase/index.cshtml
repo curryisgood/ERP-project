@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h1>구매 등록</h1>
+<form id="purchase">
+    <select id="products">
+        @foreach (var product in ViewBag.prodList)
+        {
+            <option value="@product.Name">@product.Name</option>
+        }
+    </select>
+    구매수량 <input type="number" min=0 id="quantity" />
+    <select id="customers">
+        @foreach (var customer in ViewBag.Customers)
+        {
+            <option value="@customer.Name">@customer.Name</option>
+        }
+    </select>
+    <button type="submit">등록</button>
+</form>
+<a href="~/Purchase/PurchaseList">구매 조회</a>
+<script type="module" src="~/Scripts/purchaseInput.js"></script>
+

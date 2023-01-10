@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<h1>거래처 조회</h1>
+<ul id="customerContainer">
+    @foreach (var item in ViewBag.Customers)
+    {
+        <li>
+            <button type="button" data-btn="edit">수정</button>
+            <button type="button" data-btn="delete">삭제</button>
+            <p>코드: <span id="code">@item.Code</span></p>
+            <p>거래처명: <span id="name">@item.Name</span></p>
+
+            <form id="editForm" hidden>
+                <input type="text" placeholder="거래처명" id="customerName" />
+                <button type="submit">등록</button>
+            </form>
+        </li>
+    }
+</ul>
+<a href="~/Account/">거래처 등록</a>
+<script src="~/ClientSrc/accountGet.js"></script>
+
